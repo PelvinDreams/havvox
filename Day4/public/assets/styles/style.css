@@ -1,0 +1,231 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* HEADER SECTION */
+.header {
+  width: 100%;
+  background-color: #37517e;
+}
+
+.header .container {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* Vertically align items */
+}
+
+.nav {
+  display: flex;
+}
+
+.header .container .nav .nav-items {
+  margin-right: 30px;
+}
+
+.header .container .nav .nav-items a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header .container .nav .nav-items a.get-started {
+  background-color: #47b2e4;
+  border-radius: 50px;
+  padding: 12px 20px;
+}
+
+/* Responsive adjustments for NAV */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;  /* Stack logo and nav items vertically */
+    align-items: flex-start;  /* Align nav to the left */
+  }
+
+  .nav {
+    flex-direction: column;  /* Stack nav items vertically */
+    width: 100%;  /* Make the nav take full width */
+    align-items: flex-start;  /* Align links to the left */
+  }
+
+  .header .container .nav .nav-items {
+    margin: 10px 0;  /* Add spacing between each link */
+  }
+
+  .header .container .nav .nav-items a {
+    padding: 10px 0;
+  }
+
+  .header .container .nav .nav-items a.get-started {
+    margin-top: 20px;  /* Add spacing between regular links and the 'Get Started' button */
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+.header .container .nav .nav-items a.get-started:hover {
+  background-color: orange;
+  color: #fff;
+  transform: translateX(5px); /* Smooth movement */
+  transition: all 0.3s ease;
+}
+
+
+.header .container .nav .nav-items a.get-started:hover{
+  background-color: orange;
+  color: #fff;
+  left: 30px;
+}
+
+/* HERO SECTION */
+.hero{
+  width: 100%;
+  background-color: #37517e;
+}
+
+.hero .container{
+  width: 80%;
+ margin: auto;
+ display: flex;
+}
+
+.hero .container .left{
+  width: 50%;
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+
+.hero .container .left h1{
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero .container .left .btn-container{
+  width: 100%;
+}
+
+.hero .container .left .btn-container .get-started{
+  background-color: #47b2e4;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.hero .container .left .btn-container .watch-video{
+  /* background-color: #47b2e4; */
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.hero .container .left{
+  width: 50%;
+  padding-bottom: 50px;
+}
+
+.hero .container .left p{
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.hero .container .right{
+width: 50%;
+}
+
+.hero .container .right img{
+  width: 100%;
+}
+
+
+/* FAQ Section */
+.faq {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  /* Ensures space between the two sections */
+  align-items: center;  /* Vertically centers content */
+  padding: 50px 60px;  /* Add padding to the top and bottom */
+  box-sizing: border-box;
+}
+
+.faq .left {
+  width: 50%;
+  padding-right: 40px;  /* Adds space between the text and image */
+  background-color: #fff;
+  text-align: left;
+}
+
+.faq .left h1 {
+  color: #37517e;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+
+.faq .left h1 span {
+  font-weight: 600;
+}
+
+.faq .left p {
+  color: grey;
+  line-height: 1.8;
+}
+
+.faq .left .container {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 25px;
+  width: 100%;
+}
+
+.faq .left .container h4 {
+  color: #47b2e4;
+  font-weight: 500;
+}
+
+.faq .right {
+  width: 45%;  /* Ensure enough space for the image */
+}
+
+.faq .right img {
+  width: 100%;
+  border-radius: 10px;  /* Optional: Add some styling to the image */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;  /* Optional: Adds a slight shadow */
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .faq {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .faq .left, .faq .right {
+    width: 100%;  /* Make both sections take full width on smaller screens */
+    text-align: center;
+    padding-right: 0;  /* Remove the right padding for small screens */
+  }
+
+  .faq .left .container {
+    width: 100%;
+  }
+
+  .faq .right img {
+    margin-top: 20px;  /* Adds spacing between text and image on small screens */
+  }
+}
