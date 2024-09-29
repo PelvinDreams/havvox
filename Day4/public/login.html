@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="./assets/styles/register.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Login</div>
+
+    <form action=""  name="myForm" onsubmit="return validateForm()">
+    
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Your email..." required>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Your password..." required>
+
+      <input type="submit" value="Submit">
+  
+
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+    </form>
+  </div>
+
+  <script src="../JS/register.js"></script>
+</body>
+</html>
