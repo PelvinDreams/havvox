@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech230</title>
   <link rel="stylesheet" href="./assets/styles/style.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <section class="header">
@@ -64,13 +67,16 @@
       </div>
 
       <div class="right">
+        <div data-aos="zoom-in">
         <img src="./assets/images/hero.png" alt="">
+      </div>
       </div>
     </div>
   </section>
 
-
+  <div data-aos="fade-up-right">
   <section class="faq">
+    
     <div class="left">
        <h1>Lorem ipsum dolor sit amet consectetur
         <span> adipisicing elit. At, quia!</span></h1>
@@ -106,13 +112,22 @@
           
           <div class="container">
             <h4>Lorem ipsum dolor sit amet consectetur</h4>
-          </div>
-           
+          <!-- </div> -->
+        </div>
     </div>
 
     <div class="right">
+      <div data-aos="fade-left">
         <img src="./assets/images/why-us.png" alt="">
+      </div>
     </div>
   </section>
+
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

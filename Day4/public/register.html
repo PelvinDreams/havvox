@@ -10,12 +10,15 @@
   <div class="container">
     <div class="logo">Register</div>
 
-    <form action=""  name="myForm" onsubmit="return validateForm()">
+    <form action="/register" method="post"  name="myForm" onsubmit="return validateForm()">
       <label for="fname">First Name:</label>
       <input type="text" name="fname" id="fname" placeholder="Your name..."  required>
 
       <label for="lname">Last Name:</label>
       <input type="text" name="lname" id="lname" placeholder="Last name..." required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Your email..." required>
 
       <label for="phone">Phone:</label>
       <input type="number" name="phone" id="phone" placeholder="Your number..." required>
@@ -269,14 +272,13 @@
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" placeholder="Your password..." required>
 
-      <label for="password2">Confirm Password:</label>
-      <input type="password" name="password2" id="password2" placeholder="Confirm password..." required>
+    
 
       <input type="submit" value="Submit">
       <input type="reset" value="Reset">
 
 
-      <p>Already have an account? <a href="">Login</a></p>
+      <p>Already have an account? <a href="login.html">Login</a></p>
     </form>
   </div>
 
