@@ -5,9 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="./assets/styles/register.css">
+  <link rel="stylesheet" href="./assets/styles/Switch.css">
 </head>
 <body>
   <div class="container">
+      <label class="switch">
+        <input type="checkbox" id="togBtn">
+        <div class="slider round">
+         <!--ADDED HTML -->
+         <span class="on">ON</span>
+         <span class="off">OFF</span>
+         <!--END-->
+        </div>
+       </label>
+
+
     <div class="logo">Login</div>
 
     <form action="/login" method="post"  name="myForm" onsubmit="return validateForm()">
@@ -26,5 +38,6 @@
   </div>
 
   <script src="../JS/register.js"></script>
+  <script src="./Switch.js"></script>
 </body>
 </html>
