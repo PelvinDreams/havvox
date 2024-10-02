@@ -4,6 +4,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 
 /* HEADER SECTION */
 .header {
@@ -33,11 +36,27 @@
   color: #fff;
 }
 
+.header .container .nav .nav-items .active{
+  color: #3498db;
+}
+
+.header .container .nav .nav-items .active:hover{
+  color: #fff;
+}
+
+.header .container .nav .nav-items a:hover{
+  color: #3498db;
+  transform: translateX(5px); /* Smooth movement */
+  transition: all 0.3s ease;
+}
+
 .header .container .nav .nav-items a.get-started {
   background-color: #47b2e4;
   border-radius: 50px;
   padding: 12px 20px;
 }
+
+
 
 /* Responsive adjustments for NAV */
 @media (max-width: 768px) {
@@ -120,6 +139,15 @@
   text-decoration: none;
 }
 
+.hero .container .left .btn-container .get-started:hover {
+  background-color: orange;
+  color: #fff;
+  transform: translateX(5px); /* Smooth movement */
+  transition: all 0.3s ease;
+}
+
+
+
 .hero .container .left .btn-container .watch-video{
   /* background-color: #47b2e4; */
   padding: 10px;
@@ -128,6 +156,13 @@
   color: #fff;
   border-radius: 50px;
   text-decoration: none;
+}
+
+.hero .container .left .btn-container .watch-video:hover {
+  background-color: orange;
+  color: #fff;
+  transform: translateX(5px); /* Smooth movement */
+  transition: all 0.3s ease;
 }
 
 .hero .container .left{
@@ -158,6 +193,7 @@ width: 50%;
   align-items: center;  /* Vertically centers content */
   padding: 50px 60px;  /* Add padding to the top and bottom */
   box-sizing: border-box;
+  
 }
 
 .faq .left {
@@ -228,4 +264,69 @@ width: 50%;
   .faq .right img {
     margin-top: 20px;  /* Adds spacing between text and image on small screens */
   }
+}
+
+
+.skills-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+.image-container img{
+  width: 70%;
+  padding-right: 40px;  /* Adds space between the text and image */
+  background-color: #fff;
+  text-align: left;
+}
+
+.skill-content{
+  width: 50%;
+  padding-right: 40px;  /* Adds space between the text and image */
+  background-color: #fff;
+  text-align: left;
+}
+
+.skill-content h2{
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.skill-content p{
+  color: #7f8c8d;
+}
+
+.skill{
+  margin-bottom: 20px;
+}
+
+.progress-bar{
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+}
+
+.progress{
+  background-color: #3498db;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.skill p{
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.cta{
+  width: 100%;
+  margin-bottom: 50px;
+  background-image: url(../images/cta-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
