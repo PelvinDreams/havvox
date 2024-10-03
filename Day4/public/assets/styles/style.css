@@ -320,40 +320,110 @@ width: 50%;
   font-weight: bold;
 }
 
-
-.cta{
+/* CTA Section */
+.cta {
   width: 100%;
-  margin-bottom: 50px;
-  background-image: url(../images/cta-bg.jpg);
-  background-repeat: no-repeat;
+  background-image: url('../images/cta-bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
-  padding-top: 120px;
-   height: 100%;
-}
-
-.cta .overlay{
-  width: 100%;
-  height: 50%;
-  background-color: #37517e;
-  opacity: 0.5;
-  position: absolute;
-  top: 20px;
-}
-
-.cta .container{
-  position: relative;
+  padding: 100px 0; /* Adds vertical spacing */
   display: flex;
   justify-content: center;
-}
-
-.cta .container .left{
-  width: 60%;
-}
-
-.cta .container .left h1{
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
   color: #fff;
+}
+
+.cta .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 81, 126, 0.75); /* Darker overlay with transparency */
+  z-index: 1;
+}
+
+.cta .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  z-index: 2; /* Ensures it's above the overlay */
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.cta .left {
+  width: 60%;
+  padding-right: 20px;
+}
+
+.cta .left h1 {
+  font-size: 45px;
+  font-weight: bold;
   margin-bottom: 20px;
-  font-size: 25px;
+}
+
+.cta .left p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.cta .right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta .cta-btn {
+  background-color: #ff6a3d;
+  color: #fff;
+  padding: 18px 40px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta .cta-btn:hover {
+  background-color: #ff4700;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cta {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .cta .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta .left, .cta .right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .cta .cta-btn {
+    margin-top: 20px;
+  }
+
+  .cta .left h1 {
+    font-size: 35px;
+  }
+
+  .cta .left p {
+    font-size: 16px;
+  }
 }
