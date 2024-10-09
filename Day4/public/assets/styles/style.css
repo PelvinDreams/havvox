@@ -492,6 +492,7 @@ body {
   font-size: 32px;
   color: #3498db;
   margin-bottom: 15px;
+  display: flex;
 }
 
 .service-box h4 {
