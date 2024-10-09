@@ -429,17 +429,6 @@ width: 50%;
 }
 
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
 #services {
   padding: 60px 0;
   background-color: #f8f9fa;
@@ -457,6 +446,7 @@ body {
 }
 
 .section-title h2 {
+  color: #37517e;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
