@@ -44,13 +44,13 @@ app.post("/register", async (req, res) => {
   const { firstname, lastname, phone, country, email, password } = req.body;
 
   try {
-    const result = await db.query(
+    await db.query(
       "INSERT INTO users (firstname, lastname, phone, country, email, password) VALUES ($1, $2, $3, $4, $5, $6)",
       [firstname, lastname, phone, country, email, password]
     );
     
-    console.log(result);
-    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+    // Redirect to dashboard with showModal parameter
+    res.redirect('/dashboard.html?showModal=true');
   } catch (err) {
     console.error(err);
     res.status(500).send("Error registering user");
@@ -68,7 +68,8 @@ app.post("/login", async (req, res) => {
     );
     
     if (result.rows.length > 0) {
-      res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+      // Redirect to dashboard with showModal parameter
+      res.redirect('/dashboard.html?showModal=true');
     } else {
       res.status(401).send("Invalid credentials");
     }
@@ -78,11 +79,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// Handle 404 errors
-app.use(function(req, res) {
-  res.status(404);
-  return res.send(`404 Error: Resource not found`);
-});
 
 // Start server
 app.listen(port, () => {
