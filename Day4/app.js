@@ -1,66 +1,90 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
-const { Pool } = require('pg'); // Import the pg module
-
+const pg = require('pg'); // Import the pg module
 
 const app = express();
 const port = 5000;
 
+const db = new pg.Client({
+  user: "postgres",
+  host: "localhost",
+  database: "harvoxx",
+  password: "24687924",
+  port: 5432,
+});
 
-app.use(bodyParser.urlencoded({extended: true}));
+db.connect();
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// API route
 app.get('/api', (req, res) => {
   res.json(`HTTP GET request received`);
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
- 
 // Home Route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html')); // Use path to specify the correct file location
 });
 
-// GET ROUTE
+// GET route for registration
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
-app.get("/register", (req, res) => {
+// GET route for login
+app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
-
-
-
-// POST ROUTE
+// POST route for registration
 app.post("/register", async (req, res) => {
+  const { fname, lname, phone, country, email, password } = req.body;
 
-  const fname = req.body.fname
-  const lname = req.body.lname
-  const phone = req.body.phone
-  const country = req.body.country
-  const password = req.body.password
-  const email = req.body.email
-
-
-}); 
-
-
-app.post("/login", async (req, res) => {
-  const email = req.body.email
-  const password = req.body.password
-
- 
+  try {
+    const result = await db.query(
+      "INSERT INTO users (fname, lname, phone, country, email, password) VALUES ($1, $2, $3, $4, $5, $6)",
+      [fname, lname, phone, country, email, password]
+    );
+    
+    console.log(result);
+    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error registering user");
+  }
 });
 
+// POST route for login
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  
+  try {
+    const result = await db.query(
+      "SELECT * FROM users WHERE email = $1 AND password = $2",
+      [email, password]
+    );
+    
+    if (result.rows.length > 0) {
+      res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+    } else {
+      res.status(401).send("Invalid credentials");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error logging in");
+  }
+});
 
+// Handle 404 errors
 app.use(function(req, res) {
-  res.status(400);
+  res.status(404);
   return res.send(`404 Error: Resource not found`);
 });
 
+// Start server
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
