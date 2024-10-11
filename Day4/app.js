@@ -41,12 +41,12 @@ app.get("/login", (req, res) => {
 
 // POST route for registration
 app.post("/register", async (req, res) => {
-  const { fname, lname, phone, country, email, password } = req.body;
+  const { firstname, lastname, phone, country, email, password } = req.body;
 
   try {
     const result = await db.query(
-      "INSERT INTO users (fname, lname, phone, country, email, password) VALUES ($1, $2, $3, $4, $5, $6)",
-      [fname, lname, phone, country, email, password]
+      "INSERT INTO users (firstname, lastname, phone, country, email, password) VALUES ($1, $2, $3, $4, $5, $6)",
+      [firstname, lastname, phone, country, email, password]
     );
     
     console.log(result);
