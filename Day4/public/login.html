@@ -6,6 +6,7 @@
   <title>Register</title>
   <link rel="stylesheet" href="./assets/styles/register.css">
   <link rel="stylesheet" href="./assets/styles/Switch.css">
+  <link rel="stylesheet" href="./assets/styles/loader.css">
 
   <style>
     .modal {
@@ -40,6 +41,9 @@
   </style>
 </head>
 <body>
+  <div class="loader"></div>
+
+  
   <div id="successModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -75,7 +79,12 @@
     </form>
   </div>
 
+
+  
+
   <script src="../JS/register.js"></script>
   <script src="./Switch.js"></script>
+  <script src="../app.js"></script>
+  <script src="./loader.js"></script> <!-- Include the loader script -->
 </body>
 </html>

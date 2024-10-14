@@ -14,31 +14,4 @@ function validateForm() {
 
 
 
-  document.addEventListener('DOMContentLoaded', function () {
-    // Check if the URL has a query parameter to show the modal
-    const urlParams = new URLSearchParams(window.location.search);
-    const showModal = urlParams.get('showModal');
-    
-    if (showModal === 'true') {
-      const modal = document.getElementById("successModal");
-      const modalMessage = document.getElementById("modalMessage");
-      
-      // Set the message based on the page (register or login)
-      modalMessage.innerText = window.location.pathname === '/register' ? 'Registration Successful!' : 'Login Successful!';
-      
-      // Display the modal
-      modal.style.display = "block";
-      
-      // Close modal when the 'x' is clicked
-      document.querySelector(".close").onclick = function() {
-        modal.style.display = "none";
-      };
 
-      // Close modal if the user clicks outside of the modal
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    }
-  });
